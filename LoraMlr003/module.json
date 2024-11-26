@@ -1,0 +1,14 @@
+{
+    "id": "{49C8086F-A150-3375-22F3-4D4D82B997E1}",
+    "name": "LoraMlr003",
+    "type": 3,
+    "vendor": "J.H. Artworks | Micropelt",
+    "aliases":
+    [
+    ],
+    "url": "https://jh-artworks.com",
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "MLR3"
+}

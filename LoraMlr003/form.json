@@ -1,0 +1,57 @@
+{
+    "elements":
+    [   
+        { "type": "Label", "caption": "Main" },
+        { "type": "ValidationTextBox", "name": "devName",               "caption": "Name" },
+        { "type": "NumberSpinner", "name": "devTime",                   "caption": "Refreshtime" },
+
+        { "type": "Label", "caption": "Mqtt Properties" },
+        { "type": "SelectInstance", "name": "mqttGwId", "caption": "Mqtt Gateway", "validModules":["{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}"] },
+        { "type": "SelectInstance", "name": "modGwId", "caption": "Modbus Gateway", "validModules":["{A5F663AB-C400-4FE5-B207-4D67CC030564}"] },
+
+        { "type": "ValidationTextBox", "name": "mqttPrefix", "caption": "Mqtt-Prefix e.g. Milesight01 (/uplink/EUI  and /downlink/EUI is autm. added)" },
+        { "type": "ValidationTextBox", "name": "devEui", "caption": "Device EUI (as Suffix on MQTT Topic)" },
+
+
+        { "type": "Label", "caption": "Modbus Actualvalus to Controler:" },
+        { "type": "NumberSpinner", "name": "modFcWriteActValues",           "caption": "Functioncode Write actual Values", "value": 16},
+        { "type": "NumberSpinner", "name": "modFcReadActValues",            "caption": "Functioncode Read Actual Values", "value": 3},
+
+        { "type": "NumberSpinner", "name": "modAmbient_Temperature",    "caption": "Modbusadress Ambient_Temperature" },
+        { "type": "NumberSpinner", "name": "modCurrent_Valve_Position", "caption": "Modbusadress Current_Valve_Position" },
+        { "type": "NumberSpinner", "name": "modCalibration_OK",         "caption": "Modbusadress Calibration_OK" },
+
+        { "type": "NumberSpinner", "name": "modFlow_Sensor_Failure",    "caption": "Modbusadress Flow_Sensor_Failure" },
+        { "type": "NumberSpinner", "name": "modFlow_Temperature",       "caption": "Modbusadress Flow_Temperature (Float)" },
+        { "type": "NumberSpinner", "name": "modHarvesting_Active",      "caption": "Modbusadress Harvesting_Active" },
+
+        { "type": "NumberSpinner", "name": "modMotor_Error",            "caption": "Modbusadress Motor_Error" },
+        { "type": "NumberSpinner", "name": "modStorage_Fully_Charged",  "caption": "Modbusadress Storage_Fully_Charged" },
+        { "type": "NumberSpinner", "name": "modStorage_Voltage",        "caption": "Modbusadress Setpoint" },
+
+        { "type": "NumberSpinner", "name": "modRSSI",                   "caption": "Modbusadress RSSI" },
+        { "type": "NumberSpinner", "name": "modUsed_Temperature",       "caption": "Modbusadress Used_Temperature" },
+        { "type": "NumberSpinner", "name": "modUser_Value",             "caption": "Modbusadress User_Value" },
+
+        { "type": "Label", "caption": "Modbus Setpointvalus from Controler:" },
+        { "type": "NumberSpinner", "name": "modFcReadSetpoints",           "caption": "Functioncode", "value": 4},
+        { "type": "NumberSpinner", "name": "modUsermode",                  "caption": "Modbusadress Usermode (1 Ambienttemp | 2 Flowtemp | 3 Valveposition)", "width": "40%"},
+        { "type": "NumberSpinner", "name": "modSetpoint",               "caption": "Modbusadress Setpoint" },
+        { "type": "NumberSpinner", "name": "modRoomtemp",               "caption": "Modbusadress Roomtemp" },
+        { "type": "NumberSpinner", "name": "modSafetymode",             "caption": "Modbusadress Safetymode (1 Safety AmbientTemp | 2 Safety Flowtemp | 3 Safety Valvepos)",  "width": "40%"},
+        { "type": "NumberSpinner", "name": "modSafetySetpoint",         "caption": "Modbusadress Safety Setpoint" },
+        { "type": "NumberSpinner", "name": "modComIntervall",           "caption": "Modbusadress Comintervall (only 5/10/60/120/480 !!!)" },
+        { "type": "NumberSpinner", "name": "modRefRun",                 "caption": "Modbusadress Reference Run" }
+
+
+
+    ],
+    "actions":
+    [
+
+    ],
+    "status":
+    [
+
+    ]
+}

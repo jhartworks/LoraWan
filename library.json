@@ -1,0 +1,13 @@
+{
+    "id": "{A19E5878-FE33-0025-F952-87006CFCEE39}",
+    "author": "SE Inno GmbH",
+    "name": "LoraWanUtils",
+    "url": "https://se-inno.de",
+    "compatibility": {
+        "version": "6.0",
+        "date": 1491343200
+    },
+    "version": "1.1",
+    "build": 1,
+    "date": 0
+}

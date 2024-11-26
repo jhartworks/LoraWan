@@ -1,0 +1,41 @@
+{
+    "elements":
+    [   
+        { "type": "Label", "caption": "Main" },
+        { "type": "ValidationTextBox", "name": "devName",               "caption": "Name" },
+        { "type": "NumberSpinner", "name": "devTime",                   "caption": "Refreshtime" },
+
+        { "type": "Label", "caption": "Mqtt Properties" },
+        { "type": "SelectInstance", "name": "mqttGwId", "caption": "Mqtt Gateway", "validModules":["{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}"] },
+        { "type": "SelectInstance", "name": "modGwId", "caption": "Modbus Gateway", "validModules":["{A5F663AB-C400-4FE5-B207-4D67CC030564}"] },
+
+        { "type": "ValidationTextBox", "name": "mqttPrefix", "caption": "Mqtt-Prefix e.g. Milesight01 (/uplink/EUI  and /downlink/EUI is autm. added)" },
+        { "type": "ValidationTextBox", "name": "devEui", "caption": "Device EUI (as Suffix on MQTT Topic)" },
+
+
+        { "type": "Label", "caption": "Modbus Actualvalus to Controler:" },
+        { "type": "NumberSpinner", "name": "modFcWriteActValues",            "caption": "Functioncode Write Actual Values", "value": 16},
+        { "type": "NumberSpinner", "name": "modFcReadActValues",            "caption": "Functioncode Read Actual Values", "value": 3},
+
+        { "type": "NumberSpinner", "name": "modAmbient_Temperature",    "caption": "Modbusadress Ambient_Temperature" },
+        { "type": "NumberSpinner", "name": "modAmbient_Humidity",       "caption": "Modbusadress Ambient_Humidity" },
+
+        { "type": "NumberSpinner", "name": "modV_Bat",                  "caption": "Modbusadress Voltage_Battery" },
+
+
+        { "type": "Label", "caption": "Options:" },
+        { "type": "NumberSpinner", "name": "CalibrateTemp",           "caption": "Calibrate Temp", "value": 0.0},
+        { "type": "NumberSpinner", "name": "CalibrateHum",           "caption": "Calibrate Hum", "value": 0.0}
+
+
+
+    ],
+    "actions":
+    [
+
+    ],
+    "status":
+    [
+
+    ]
+}

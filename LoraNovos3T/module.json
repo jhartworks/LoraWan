@@ -1,0 +1,14 @@
+{
+    "id": "{14A84A97-E74A-66CB-BBDA-6BB47D6D4A2D}",
+    "name": "LoraNovos3T",
+    "type": 3,
+    "vendor": "J.H. Artworks | Thermokon",
+    "aliases":
+    [
+    ],
+    "url": "https://jh-artworks.com",
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "N3T"
+}
