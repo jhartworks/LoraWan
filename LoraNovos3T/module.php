@@ -104,7 +104,7 @@ class LoraNovos3T extends IPSModule {
 
         }
 
-        $temp = $this->CheckGetArrayValue($data,"Button");
+        $temp = $this->CheckGetArrayValue($data,"OCCU0_STATE");
         if ($temp != "failure") {
             $adressmodmodButton = $this->ReadPropertyInteger("modButton");
             $this->ModbusPublish($devEui."Button", $modGwId, $devName." Button", $adressmodmodButton, $temp, $modFcReadActValues, $modFcWriteActValues,0);
