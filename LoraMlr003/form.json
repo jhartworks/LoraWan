@@ -21,7 +21,6 @@
         { "type": "NumberSpinner", "name": "modCurrent_Valve_Position", "caption": "Modbusadress Current_Valve_Position" },
         { "type": "NumberSpinner", "name": "modCalibration_OK",         "caption": "Modbusadress Calibration_OK" },
 
-        { "type": "NumberSpinner", "name": "modFlow_Sensor_Failure",    "caption": "Modbusadress Flow_Sensor_Failure" },
         { "type": "NumberSpinner", "name": "modFlow_Temperature",       "caption": "Modbusadress Flow_Temperature (Float)" },
         { "type": "NumberSpinner", "name": "modHarvesting_Active",      "caption": "Modbusadress Harvesting_Active" },
 

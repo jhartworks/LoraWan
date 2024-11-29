@@ -22,7 +22,7 @@ class LoraMlr003 extends IPSModule {
         $this->RegisterPropertyInteger("modCurrent_Valve_Position",12345);
         $this->RegisterPropertyInteger("modCalibration_OK",12345); 
 
-        $this->RegisterPropertyInteger("modFlow_Sensor_Failure",12345);
+    
         $this->RegisterPropertyInteger("modFlow_Temperature",12345);
         $this->RegisterPropertyInteger("modHarvesting_Active",12345);
 
@@ -193,8 +193,6 @@ class LoraMlr003 extends IPSModule {
 
         $temp = $this->CheckGetArrayValue($data,"Flow_Sensor_Failure");
         if ($temp != "failure") {
-            $adressmodFlow_Sensor_Failure = $this->ReadPropertyInteger("modFlow_Sensor_Failure");
-            $this->ModbusPublish($devEui."Flow_Sensor_Failure", $modGwId, $devName." Flow_Sensor_Failure", $adressmodFlow_Sensor_Failure, $temp, $modFcReadActValues, $modFcWriteActValues,0);
             $temp = "failure";
 
         }
