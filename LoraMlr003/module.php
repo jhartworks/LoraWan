@@ -52,7 +52,10 @@ class LoraMlr003 extends IPSModule {
         $this->RegisterTimer("WriteUpdate", 0, 'MLR3_WriteSetpointvalues('.$this->InstanceID.');');
         $this->RegisterVariableString("hexOutput","HEX-Output");
         $this->RegisterVariableString("jsonOutput","JSON-Output");
- 
+        $this->RegisterVariableFloat("setpointModbus","Setpoint from Modbus");
+        $this->RegisterVariableFloat("valvePosition","Actual Valve Position");
+        $this->RegisterVariableFloat("storageVoltage","Storagevoltage");
+
     }
 
     // Überschreibt die intere IPS_ApplyChanges($id) Funktion
@@ -164,6 +167,9 @@ class LoraMlr003 extends IPSModule {
 
         $temp = $this->CheckGetArrayValue($data,"Current_Valve_Position");
         if ($temp != "failure") {
+            $idFromvalvePosition = $this->GetIDForIdent("valvePosition");
+            SetValueFloat($idFromvalvePosition,$temp);
+
             $adressmodCurrent_Valve_Position = $this->ReadPropertyInteger("modCurrent_Valve_Position");
             $this->ModbusPublish($devEui."Current_Valve_Position", $modGwId, $devName." Current_Valve_Position", $adressmodCurrent_Valve_Position, $temp, $modFcReadActValues, $modFcWriteActValues,5);
             $temp = "failure";
@@ -303,6 +309,10 @@ class LoraMlr003 extends IPSModule {
         $temp = $this->CheckGetArrayValue($data,"Storage_Voltage");
         if ($temp != "failure") {
             $adressmodStorage_Voltage = $this->ReadPropertyInteger("modStorage_Voltage");
+
+            $idFromstorageVoltage = $this->GetIDForIdent("storageVoltage");
+            SetValueFloat($idFromstorageVoltage,$temp);
+
             //echo "Storage_Voltage ".$temp;
             $this->ModbusPublish($devEui."Storage_Voltage", $modGwId, $devName." Storage_Voltage", $adressmodStorage_Voltage, $temp, $modFcReadActValues, $modFcWriteActValues,7);
             $temp = "failure";
@@ -374,6 +384,10 @@ class LoraMlr003 extends IPSModule {
         //echo $modUsermode;
         $adressmodSetpoint = $this->ReadPropertyInteger("modSetpoint");
         $modSetpoint = $this->ModbusPublish($devEui."Setpoint", $modGwId, $devName." Setpoint", $adressmodSetpoint, $temp, $modFcReadSetpoints, 0,5);
+
+        $idFromsetpointModbus = $this->GetIDForIdent("setpointModbus");
+        SetValueFloat($idFromsetpointModbus,$modSetpoint);
+
         //echo $modSetpoint;
         $adressmodRoomtemp = $this->ReadPropertyInteger("modRoomtemp");
         $modRoomtemp = $this->ModbusPublish($devEui."Roomtemp", $modGwId, $devName." Roomtemp", $adressmodRoomtemp, $temp, $modFcReadSetpoints, 0,5);
