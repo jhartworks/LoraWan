@@ -379,30 +379,30 @@ class LoraMlr003 extends IPSModule {
         $modFcReadSetpoints = $this->ReadPropertyInteger("modFcReadSetpoints");
         
         $adressmodUsermode = $this->ReadPropertyInteger("modUsermode");
-        $modUsermode = $this->ModbusPublish($devEui."Usermode", $modGwId, $devName." Usermode", $adressmodUsermode, $temp, $modFcReadSetpoints, 0,5);
+        $modUsermode = $this->ModbusPublish($devEui."Usermode", $modGwId, $devName." Usermode", $adressmodUsermode, $temp, $modFcReadSetpoints, 0,7);
         //echo $adressmodUsermode;
         //echo $modUsermode;
         $adressmodSetpoint = $this->ReadPropertyInteger("modSetpoint");
-        $modSetpoint = $this->ModbusPublish($devEui."Setpoint", $modGwId, $devName." Setpoint", $adressmodSetpoint, $temp, $modFcReadSetpoints, 0,5);
+        $modSetpoint = $this->ModbusPublish($devEui."Setpoint", $modGwId, $devName." Setpoint", $adressmodSetpoint, $temp, $modFcReadSetpoints, 0,7);
 
         $idFromsetpointModbus = $this->GetIDForIdent("setpointModbus");
         SetValueFloat($idFromsetpointModbus,$modSetpoint);
 
         //echo $modSetpoint;
         $adressmodRoomtemp = $this->ReadPropertyInteger("modRoomtemp");
-        $modRoomtemp = $this->ModbusPublish($devEui."Roomtemp", $modGwId, $devName." Roomtemp", $adressmodRoomtemp, $temp, $modFcReadSetpoints, 0,5);
+        $modRoomtemp = $this->ModbusPublish($devEui."Roomtemp", $modGwId, $devName." Roomtemp", $adressmodRoomtemp, $temp, $modFcReadSetpoints, 0,7);
 
         $adressmodSafetymode = $this->ReadPropertyInteger("modSafetymode");
-        $modSafetymode = $this->ModbusPublish($devEui."Safetymode", $modGwId, $devName." Safetymode", $adressmodSafetymode, $temp, $modFcReadSetpoints, 0,5);
+        $modSafetymode = $this->ModbusPublish($devEui."Safetymode", $modGwId, $devName." Safetymode", $adressmodSafetymode, $temp, $modFcReadSetpoints, 0,7);
 
         $adressmodSafetySetpoint = $this->ReadPropertyInteger("modSafetySetpoint");
-        $modSafetySetpoint = $this->ModbusPublish($devEui."SafetySetpoint", $modGwId, $devName." SafetySetpoint", $adressmodSafetySetpoint, $temp, $modFcReadSetpoints, 0,5);
+        $modSafetySetpoint = $this->ModbusPublish($devEui."SafetySetpoint", $modGwId, $devName." SafetySetpoint", $adressmodSafetySetpoint, $temp, $modFcReadSetpoints, 0,7);
 
         $adressmodComIntervall = $this->ReadPropertyInteger("modComIntervall");
-        $modComIntervall = $this->ModbusPublish($devEui."ComIntervall", $modGwId, $devName." ComIntervall", $adressmodComIntervall, $temp, $modFcReadSetpoints, 0,5);
+        $modComIntervall = $this->ModbusPublish($devEui."ComIntervall", $modGwId, $devName." ComIntervall", $adressmodComIntervall, $temp, $modFcReadSetpoints, 0,7);
 
         $adressmodRefRun = $this->ReadPropertyInteger("modRefRun");
-        $modRefRun = $this->ModbusPublish($devEui."RefRun", $modGwId, $devName." RefRun", $adressmodRefRun, $temp, $modFcReadSetpoints, 0,5);
+        $modRefRun = $this->ModbusPublish($devEui."RefRun", $modGwId, $devName." RefRun", $adressmodRefRun, $temp, $modFcReadSetpoints, 0,7);
         
 
         $usermode = $modUsermode;
