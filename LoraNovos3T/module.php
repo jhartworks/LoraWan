@@ -79,7 +79,8 @@ class LoraNovos3T extends IPSModule {
             $temp = "failure";
             return "Fehler: Ungültiges JSON.";
         }
-     
+        $temp = "failure";
+
         $temp = $this->CheckGetArrayValue($data,"TEMP");
         if ($temp != "failure") {
             $adressmodAmbient_Temperature = $this->ReadPropertyInteger("modAmbient_Temperature");
