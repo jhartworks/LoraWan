@@ -500,7 +500,7 @@ class LoraMlr003 extends IPSModule {
         SetValueString($idFromHexOutput,$sendstring);
         $data = [
             "confirmed" => true,
-            "fport" => 85,
+            "fport" => 1,
             "data" => $payload
         ];
 
