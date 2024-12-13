@@ -5,6 +5,8 @@
         { "type": "ValidationTextBox", "name": "devName",               "caption": "Name" },
         { "type": "NumberSpinner", "name": "devTime",                   "caption": "Refreshtime" },
 
+        { "type": "NumberSpinner", "name": "devLoraQueTime",                   "caption": "LORA QUE Time (min)" },
+
         { "type": "Label", "caption": "Mqtt Properties" },
         { "type": "SelectInstance", "name": "mqttGwId", "caption": "Mqtt Gateway", "validModules":["{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}"] },
         { "type": "SelectInstance", "name": "modGwId", "caption": "Modbus Gateway", "validModules":["{A5F663AB-C400-4FE5-B207-4D67CC030564}"] },
@@ -47,7 +49,7 @@
     ],
     "actions":
     [
-
+        { "type": "Button", "label": "Send QUE", "onClick": "MLR3_WriteSetpointvalues($id);" }
     ],
     "status":
     [

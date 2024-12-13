@@ -9,6 +9,8 @@ class LoraMlr003 extends IPSModule {
         $this->RegisterPropertyString("devName","A Small Valve in a Big World 01");
         $this->RegisterPropertyInteger("devTime",10);
 
+        $this->RegisterPropertyInteger("devLoraQueTime",10);
+
         $this->RegisterPropertyString("mqttPrefix","milesight01");
         $this->RegisterPropertyInteger("mqttGwId",54321);
         $this->RegisterPropertyInteger("modGwId",54321);
@@ -68,6 +70,7 @@ class LoraMlr003 extends IPSModule {
         $devEui = $this->ReadPropertyString("devEui");
         $mqttGwId = $this->ReadPropertyInteger("mqttGwId");
         $devTime = $this->ReadPropertyInteger("devTime");
+        $devLoraQueTime = $this->ReadPropertyInteger("devLoraQueTime");
 
         $topicuplink = $mqttPrefix.'/uplink'.'/'.$devEui;
         $topicdownlink = $mqttPrefix.'/downlink'.'/'.$devEui;
@@ -76,7 +79,7 @@ class LoraMlr003 extends IPSModule {
         $this->MqttPublish("s".$devEui, $mqttGwId, $devName." ".$devEui. " downlink", $topicdownlink, "", false, false);
 
         $this->SetTimerInterval("ReadUpdate", $devTime * 1000);
-        $this->SetTimerInterval("WriteUpdate", 10 * 60 * 1000);
+        $this->SetTimerInterval("WriteUpdate", $devLoraQueTime * 60 * 1000);
 
     }
     /**
