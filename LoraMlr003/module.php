@@ -76,7 +76,7 @@ class LoraMlr003 extends IPSModule {
         $this->MqttPublish("s".$devEui, $mqttGwId, $devName." ".$devEui. " downlink", $topicdownlink, "", false, false);
 
         $this->SetTimerInterval("ReadUpdate", $devTime * 1000);
-        $this->SetTimerInterval("WriteUpdate", $devTime * 1000);
+        $this->SetTimerInterval("WriteUpdate", 10 * 60 * 1000);
 
     }
     /**
