@@ -52,6 +52,7 @@ class LoraMlr003 extends IPSModule {
 
         $this->RegisterTimer("ReadUpdate", 0, 'MLR3_ReadActualValues('.$this->InstanceID.');');
         $this->RegisterTimer("WriteUpdate", 0, 'MLR3_WriteSetpointvalues('.$this->InstanceID.');');
+        
         $this->RegisterVariableString("hexOutput","HEX-Output");
         $this->RegisterVariableString("jsonOutput","JSON-Output");
         $this->RegisterVariableFloat("setpointModbus","Setpoint from Modbus");

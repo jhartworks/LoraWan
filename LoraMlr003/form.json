@@ -3,15 +3,15 @@
     [   
         { "type": "Label", "caption": "Main" },
         { "type": "ValidationTextBox", "name": "devName",               "caption": "Name" },
-        { "type": "NumberSpinner", "name": "devTime",                   "caption": "Refreshtime" },
+        { "type": "NumberSpinner", "name": "devTime",                   "caption": "Refreshtime (sek) | Act- Values To Controller", "width": "40%"},
 
-        { "type": "NumberSpinner", "name": "devLoraQueTime",                   "caption": "LORA QUE Time (min)" },
+        { "type": "NumberSpinner", "name": "devLoraQueTime",                   "caption": "LORA QUE Time (min) | Payload to Broker / LORA", "width": "40%"},
 
         { "type": "Label", "caption": "Mqtt Properties" },
         { "type": "SelectInstance", "name": "mqttGwId", "caption": "Mqtt Gateway", "validModules":["{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}"] },
         { "type": "SelectInstance", "name": "modGwId", "caption": "Modbus Gateway", "validModules":["{A5F663AB-C400-4FE5-B207-4D67CC030564}"] },
 
-        { "type": "ValidationTextBox", "name": "mqttPrefix", "caption": "Mqtt-Prefix e.g. Milesight01 (/uplink/EUI  and /downlink/EUI is autm. added)" },
+        { "type": "ValidationTextBox", "name": "mqttPrefix", "caption": "Mqtt-Prefix e.g. Milesight01 (/uplink/EUI  and /downlink/EUI is autm. added)" , "width": "40%"},
         { "type": "ValidationTextBox", "name": "devEui", "caption": "Device EUI (as Suffix on MQTT Topic)" },
 
 
