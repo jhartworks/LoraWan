@@ -131,7 +131,7 @@ class LoraMlr003 extends IPSModule {
         //echo $temp;
         if ($temp != "failure") {
             $adressmodAmbient_Temperature = $this->ReadPropertyInteger("modAmbient_Temperature");
-/*             $this->SendDebug("Ambient_Temperature: ",$temp, 0);
+            /*$this->SendDebug("Ambient_Temperature: ",$temp, 0);
             $this->SendDebug("Ambient_Temperature Adress: ", $adressmodAmbient_Temperature, 0); */
             $this->ModbusPublish($devEui."Ambient_Temperature", $modGwId, $devName." Ambient_Temperature", $adressmodAmbient_Temperature, $temp, $modFcReadActValues, $modFcWriteActValues,7);
             $temp = "failure";
@@ -379,7 +379,7 @@ class LoraMlr003 extends IPSModule {
         $modFcReadSetpoints = $this->ReadPropertyInteger("modFcReadSetpoints");
         
         $adressmodUsermode = $this->ReadPropertyInteger("modUsermode");
-        $modUsermode = $this->ModbusPublish($devEui."Usermode", $modGwId, $devName." Usermode", $adressmodUsermode, $temp, $modFcReadSetpoints, 0,7);
+        $modUsermode = $this->ModbusPublish($devEui."Usermode", $modGwId, $devName." Usermode", $adressmodUsermode, $temp, $modFcReadSetpoints, 0,5);
         //echo $adressmodUsermode;
         //echo $modUsermode;
         $adressmodSetpoint = $this->ReadPropertyInteger("modSetpoint");
@@ -689,12 +689,13 @@ class LoraMlr003 extends IPSModule {
                     $payload = true;
                 } 
 
-            RequestAction($var_id, $payload);
-            IPS_SemaphoreLeave($ident);
-            return true;
+                RequestAction($var_id, $payload);
+                IPS_SemaphoreLeave($ident);
+
+                return true;
             }else{
-            IPS_SemaphoreLeave($ident);
-            return GetValue($var_id);
+                IPS_SemaphoreLeave($ident);
+                return GetValue($var_id);
             }
 
             IPS_SemaphoreLeave($ident); // !!! IMPORTANT !!!
